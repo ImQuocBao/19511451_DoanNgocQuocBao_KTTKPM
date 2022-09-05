@@ -29,8 +29,6 @@ public class QueueSender {
 		MessageProducer producer = session.createProducer(destination);
 		//create text message
 		
-		
-		
 		Scanner sc = new Scanner(System.in);
 		String chuoi;
 	    do {
@@ -40,9 +38,9 @@ public class QueueSender {
 		    Message msg = session.createTextMessage(chuoi);
 			producer.send(msg);
 			Person p = new Person(1001, "Đoàn Ngọc Quốc Bảo", new Date());
-			String xml = new XMLConvert<Person>(p).object2XML(p);
-			msg = session.createTextMessage(xml);
-			producer.send(msg);
+//			String xml = new XMLConvert<Person>(p).object2XML(p);
+//			msg = session.createTextMessage(xml);
+//			producer.send(msg);
 	    } while (!chuoi.equals("exit"));
 	    System.out.println("vo ne");
 	    
